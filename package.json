@@ -1,0 +1,31 @@
+{
+  "name": "zedelivery-challenge",
+  "version": "1.0.0",
+  "description": "Zé Delivery code challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcacars/zedelivery-challenge.git"
+  },
+  "keywords": [
+    "front-end",
+    "challenges",
+    "zé"
+  ],
+  "author": "Gabriel Anderson <gcacars@gmail.com> (https://github.com/gcacars)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gcacars/zedelivery-challenge/issues"
+  },
+  "homepage": "https://github.com/gcacars/zedelivery-challenge#readme",
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-vue": "^6.2.2"
+  }
+}

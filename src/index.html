@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zé Delivery - Bebidas geladas e salgados na sua casa em até uma hora</title>
+  <link rel="stylesheet" href="style/base.css">
+  <!--<script src="https://cdn.jsdelivr.net/npm/vue" defer></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container col2">
+      <a href="https://www.ze.delivery/" target="_blank" class="col">
+        <img src="https://courier-images-web.imgix.net/static/img/white-logo.png?auto=compress,format&fit=max&w=121&h=40&dpr=2&fm=png" width="121">
+      </a>
+      <div class="col text-right-md">
+        Entrar
+      </div>
+    </div>
+  </header>
+  
+  <main id="app" v-cloak>
+    <div class="container text-center" style="max-width: 500px; margin: 0 auto">
+      <h1>
+        Onde posso entregar <span class="color-brand">{{msg}}</span> para você agora?
+      </h1>
+      <form id="" accept-charset="utf-8" style="margin-bottom: 2em;">
+        <input type="text" class="control text-center text-capitalize" id="adr" placeholder="Digite um endereço para entregar"
+               style="width: 100%; font-size: 1.2rem" autofocus>
+      </form>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="col3 container">
+      <div class="col text-center text-left-md">
+        <a href="#" class="color-black">Termos de uso</a>&nbsp;&nbsp;
+        <a href="#" class="color-black">Política de privacidade</a>
+      </div>
+      <div class="col text-center">
+        <small>&copy; 2020 - Todos os direitos reservados.</small>
+      </div>
+      <div class="col text-center text-right-md">
+        <strong>BEBA COM MODERAÇÃO</strong>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/app.js" defer></script>
+</body>
+</html>
