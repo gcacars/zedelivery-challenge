@@ -11,25 +11,20 @@
 <body>
   <header>
     <div class="container col2">
-      <a href="https://www.ze.delivery/" target="_blank" class="col">
-        <img src="https://courier-images-web.imgix.net/static/img/white-logo.png?auto=compress,format&fit=max&w=121&h=40&dpr=2&fm=png" width="121">
-      </a>
+      <div class="col logo">
+        <a href="https://www.ze.delivery/" target="_blank">
+          <img src="https://courier-images-web.imgix.net/static/img/white-logo.png?auto=compress,format&fit=max&w=121&h=40&dpr=2&fm=png" width="121">
+        </a>
+        <span style="margin-left: 1rem;">Zé Delivery<br>Front-end Challenge</span>
+      </div>
       <div class="col text-right-md">
-        Entrar
+        <a href="#" class="color-white">Entrar</a>
       </div>
     </div>
   </header>
   
   <main id="app" v-cloak>
-    <div class="container text-center" style="max-width: 500px; margin: 0 auto">
-      <h1>
-        Onde posso entregar <span class="color-brand">{{msg}}</span> para você agora?
-      </h1>
-      <form id="" accept-charset="utf-8" style="margin-bottom: 2em;">
-        <input type="text" class="control text-center text-capitalize" id="adr" placeholder="Digite um endereço para entregar"
-               style="width: 100%; font-size: 1.2rem" autofocus>
-      </form>
-    </div>
+    <component :is="page" @route="route"></component>
   </main>
   
   <footer>
@@ -47,6 +42,9 @@
     </div>
   </footer>
   
+  <script src="views/home.js" defer></script>
   <script src="js/app.js" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgoW29d15pi7WgdFsfuUjCKCbUrAXow4c&libraries=places" onload="googleinit" async defer></script>
+  <script src="views/products.js" defer></script>
 </body>
 </html>

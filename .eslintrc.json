@@ -1,21 +1,18 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": false,
-        "node": true
-    },
-    "extends": "airbnb-base",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaVersion": 5
-    },
-    "plugins": [
-        "vue"
-    ],
-    "rules": {
-    }
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "airbnb-base",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2015
+  },
+  "plugins": [],
+  "rules": {}
 }

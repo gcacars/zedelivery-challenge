@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": false,
+    "es6": false,
+    "node": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 5,
+    "sourceType": "script"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:es5/no-es2016"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "plugins": [],
+  "rules": {}
+}

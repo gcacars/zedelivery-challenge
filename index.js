@@ -1,4 +1,3 @@
-/* es6: true */
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
@@ -10,7 +9,7 @@ const base = process.env.BASE_URL || '/src';
 http.createServer((request, response) => {
   try {
     const requestUrl = urlParser.parse(request.url);
-    const urlPath = path.normalize(requestUrl.pathname);
+    const urlPath = (requestUrl.pathname === '/') ? '/index.html' : path.normalize(requestUrl.pathname);
     const fsPath = `${__dirname}${base}${urlPath}`;
     const fileStream = fs.createReadStream(fsPath);
 
