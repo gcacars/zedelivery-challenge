@@ -196,7 +196,6 @@ footer {
 .bar-item:last-child {
   border-radius: 0 1rem 1rem 0;
 }
-
 .bar-item.active {
   border-color: var(--color);
   background-color: var(--color);
@@ -208,6 +207,12 @@ footer {
 .bar-option {
   display: flex;
   align-items: center;
+}
+.bar-item input {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  font-size: 1rem;
 }
 
 .categories {
