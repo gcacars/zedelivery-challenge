@@ -8,6 +8,6 @@ window.app = new Vue({
   methods: {
     route: function (val) {
       this.page = val;
-    }
+    },
   },
 });

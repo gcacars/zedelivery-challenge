@@ -11,13 +11,17 @@ window.googleinit = function() {
 Vue.component('home', {
   data: function() {
     return {
+      loading: false,
       msg: msgs[0],
+      address: '',
     };
   },
 
   methods: {
     send: function() {
-      this.$emit('route', 'products');
+      if (!this.address.trim()) {
+        window.alert('Por favor, digite e escolha um endereço!');
+      }
     }
   },
 
@@ -32,14 +36,22 @@ Vue.component('home', {
     // make sure that the google has binded to element
     this.$nextTick(function() {
       var waits = window.google ? 0 : 100;
-      setTimeout(function() {
-        var ac = window.googleinit();
-        google.maps.event.addListener(ac, 'place_changed', function() {
-          var place = ac.getPlace().geometry.location;
-          window.localStorage.setItem('lat', place.lat());
-          window.localStorage.setItem('lng', place.lng())
-          self.$emit('route', 'products')
-        });
+      intg = setInterval(function() {
+        if (window.google) {
+          clearInterval(intg);
+          var ac = window.googleinit();
+          google.maps.event.addListener(ac, 'place_changed', function() {
+            var place = ac.getPlace().geometry.location;
+            window.localStorage.setItem('lat', place.lat());
+            window.localStorage.setItem('lng', place.lng());
+            window.localStorage.setItem('adr', self.address);
+            self.loading = true;
+            window.POC.load(place.lat(), place.lng(), function(res) {
+              window.localStorage.setItem('poc', JSON.stringify(res.pocSearch[0]));
+              self.$emit('route', 'products');
+            });
+          });
+        }
       }, waits);
     });
   },
@@ -56,8 +68,9 @@ Vue.component('home', {
         '</h1>',
         '<form id="" accept-charset="utf-8" style="margin-bottom: 2em;" @submit="send">',
           '<input type="text" class="control text-center text-capitalize" id="adr" placeholder="Digite um endereço para entregar"',
-                'style="width: 100%; font-size: 1.2rem" autofocus>',
+                'style="width: 100%; font-size: 1.2rem" autofocus v-model="address" :disabled="loading">',
         '</form>',
+        '<div class="spinner" v-if="loading"></div>',
       '</div>',
     '</div>',
   ].join(''),
